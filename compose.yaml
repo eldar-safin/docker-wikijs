@@ -18,6 +18,8 @@ services:
     env_file:
       - .env/postgres
       - .env/wiki
+    volumes:
+      - wiki-backup:/wiki/backup
     ports:
       - 80:3000
       - 443:3443
@@ -25,3 +27,4 @@ services:
 
 volumes:
   postgres-data:
+  wiki-backup:
